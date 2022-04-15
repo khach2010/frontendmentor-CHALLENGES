@@ -1,0 +1,230 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Roboto:ital,wght@0,300;0,700;1,300&family=Rubik+Mono+One&display=swap');
+
+
+:root {
+  --font-family: 'Overpass', sans-serif;
+  --primary-color: #FF8A71;
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: #0f0f0f;
+  --orange: #FC7614;
+  --light-grey-color: hsl(217, 12%, 63%);
+  --medium-grey-color:hsl(216, 12%, 54%);
+  --darkblue-color: hsl(213, 19%, 18%);
+  --very-darkblue-color: hsl(213, 19%, 18%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+/* -------- default setup --------- */
+
+body {
+  font-family: 'Overpass, sans-serif';
+  background: var(--black-color);
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+p {
+  font-size: 15px;
+}
+
+.container {
+  width: 420px;
+  height: 416px;
+  padding: 32px;
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.star {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkblue-color);
+  border-radius: 50%;
+}
+.star svg {
+  margin: 0 auto;
+  display: block;
+}
+.content h2 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  margin-bottom: 7px;
+  color: var(--white-color);
+}
+.content p {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--light-grey-color);
+}
+.rating {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.number {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: var(--medium-grey-color);
+}
+.submit {
+  width: 100%;
+  background-color: var(--orange);
+  border-radius: 22.5px;
+  text-align: center;
+  padding: 11px 0px;
+  cursor: pointer;
+}
+.submit button {
+  background-color: transparent;
+  color: var(--white-color);
+  border: none;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.submit:hover {
+  background-color: var(--white-color);
+}
+.submit:hover button {
+  color: var(--orange);
+}
+.number {
+  cursor: pointer;
+}
+.number:hover {
+  background-color: var(--orange);
+  color: var(--white-color);
+}
+.select {
+  background-color: var(--medium-grey-color);
+  color: var(--white-color);
+}
+
+.thankyou {
+  display: none; /* Hidden by default */
+  width: 420px;
+  height: 416px;
+  padding: 45px 40px;
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+  border-radius: 30px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1; /* Sit on top */
+} 
+.yourrating {
+  width: 193px;
+  height: 32px;
+  display: block;
+  margin: 32px auto;
+  padding: 4px;
+  border-radius: 30px;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: center;
+  color: var(--orange);
+  background-color: var(--darkblue-color);
+}
+.thankyou-text h3 {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+.thankyou-text p {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--light-grey-color)
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 327px;
+    height: 360px;
+    padding: 24px;
+  }
+  .star {
+    width: 42px;
+    height: 42px; 
+  }
+  .content h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .submit button {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .thankyou {
+    width: 327px;
+    height: 360px;
+    padding: 34px 24px 37px;
+  }
+  .thankyou img {
+    width: 144px;
+    height: 96px;
+  }
+  .yourrating {
+    margin: 24px auto;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 5px;
+  }
+  .thankyou-text h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .thankyou-text p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
