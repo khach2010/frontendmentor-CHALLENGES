@@ -22,6 +22,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   It take around 4 to 5 hours to design and implement the simple form validation logic. 
       + Design : 2.5h
       + JS form validation: 1.5h
+  This is a desktop and mobile responsive version. For table, it needs a further adjustment.
 ### The challenge
 
 Users should be able to:
@@ -46,71 +47,82 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/khach2010/frontendmentor-CHALLENGES)
+- Live Site URL: [Add live site URL here](https://intro-component-with-signup-form-tule.netlify.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
+- SCSS
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Desktop and mobile responsive
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+  Use scss - scss variable 
+  A handle terminal comment to watch the change in scss file and compile the scss to css file - "sass --watch scss/style.scss css/style.css".
+  _ Create a ready css custom class for the JS part 
+  _ Create JS helper functions to handle displaying messages for validateInputs() function
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+```css ready custom class
+   .input-control.success input {
+        border-color: $primary-color-green;
+      }
+    
+      .input-control.error input {
+          border-color: $primary-color-red;
+      }
+      
+      .input-control .error {
+          text-align: right;
+          color: $primary-color-red;
+          font-family: $font-stack-1;
+          font-weight: 500;
+          line-height: 16px;
+          font-size: 11px;
+          height: 13px;
+          font-style: italic;
+      }
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+```js helper functions
+const setError = (element, message) => {
+  const inputControl = element.parentElement
+  const errorDisplay = inputControl.querySelector('.error')
+
+  errorDisplay.innerText = message
+  inputControl.classList.add('error')
+  inputControl.classList.remove('success')
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const setSuccess = (element) => {
+  const inputControl = element.parentElement
+  const errorDisplay = inputControl.querySelector('.error')
+
+  errorDisplay.innerText = ''
+  inputControl.classList.add('success')
+  inputControl.classList.remove('error')
+}
+const isValidEmail = (email) => {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return re.test(String(email).toLowerCase())
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+ Table view size needs further adjustment
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [JS form validation](https://dev.to/javascriptacademy/form-validation-using-javascript-34je) - This helped me for the JS part simple form validation.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Tu Le](https://mtle.nl/)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/khach2010)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
