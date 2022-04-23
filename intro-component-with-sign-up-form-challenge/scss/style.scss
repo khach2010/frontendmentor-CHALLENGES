@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,700;1,300&family=Rubik+Mono+One&display=swap');
+
+$font-stack-1: 'Poppins', sans-serif;
+$light-color: #eae6e6;
+$dark-color: #202020;
+$white-color: #ffffff;
+$primary-color-red: 	#ff7a7a;
+$primary-color-green: 	#38cc8c;
+$blue-color: 	#6055a5;
+$dark-blue-color: #3e3c49;
+$grayish-blue-color: 	#b9b6d3;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-stack-1;
+  background: $light-color;
+  background-color: $primary-color-red;   
+  min-height: 100vh;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+.background-container {
+  width: 100%;
+  min-height: 100vh !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/bg-intro-desktop.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  .learntocode {
+    width: 525px;
+    height: 220px;
+    margin-right: 45px;
+    h1 {
+      font-family: $font-stack-1;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 55px;
+      letter-spacing: -0.520833px;
+      color: $white-color;
+      margin-bottom: 25px;
+    }
+    p {
+      font-family: $font-stack-1;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: $white-color;
+    }
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 540px;
+    .notification {
+      background-color: $blue-color;
+      
+      color: $white-color;
+      height: 60px;
+      box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+ 
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      min-height: 474px;
+      background-color: $white-color;
+      box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+      border-radius: 10px;
+      .input-control {
+        width: 100%;
+      }
+      .input-control.success input {
+        border-color: $primary-color-green;
+      }
+    
+      .input-control.error input {
+          border-color: $primary-color-red;
+      }
+      
+      .input-control .error {
+          text-align: right;
+          color: $primary-color-red;
+          font-family: $font-stack-1;
+          font-weight: 500;
+          line-height: 16px;
+          font-size: 11px;
+          height: 13px;
+          font-style: italic;
+         
+      }
+
+      input {
+        width: 100%;
+        height: 56px;
+        background: $white-color;
+        border: 1px solid #DEDEDE;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 0 32px;
+        font-family: $font-stack-1;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 0.25px;
+        color: $dark-color;
+        mix-blend-mode: normal;
+        opacity: 0.75;
+      }
+      input:focus {
+        outline: none;
+      }
+    
+    
+      button {
+        width: 100%;
+        height: 56px;
+        border: none;
+        color: $white-color;
+        background: $primary-color-green;
+        box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+        border-radius: 5px;
+        font-family: $font-stack-1;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 26px;
+        letter-spacing: 1px;
+        &:focus, &:active {
+          outline: none;
+        }
+      }
+      p {
+        font-family: $font-stack-1;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 26px;
+        text-align: center;
+        color: $grayish-blue-color;
+        span {
+          color: $primary-color-red;
+        }
+      }
+    }
+  }
+}
+
+/* @media query */
+@media screen and (max-width: 1149px) {
+  .background-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 590px) {
+  body {
+    height: 100%;
+  }
+   
+  .background-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 88px 0px 68px;
+    .learntocode {
+      margin: 0 auto;
+      text-align: center;  
+      width: 327px;
+      margin-bottom: 64px;
+      h1 {
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: -0.291667px;
+        text-align: center;
+      }
+    }
+    .form-container {
+      width: 327px;
+      padding: 0px;
+      .notification {
+        height: 88px;
+        padding: 18px 64px;
+        text-align: center;
+      }
+      .form {
+        padding: 24px;
+        input {
+          padding: 0 19px;
+        }
+        p {
+          line-height: 21px;
+        }
+      }
+    
+    }
+  }
+}
